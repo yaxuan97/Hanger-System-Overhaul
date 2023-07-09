@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "cn.yaxuan97.hangersystemchange.mixin",
+  "refmap": "hangersystemchange.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "HangerMixin",
+    "BonemealNerfCropMixin",
+    "BonemealNerfStemMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

@@ -1,0 +1,11 @@
+{
+  "config.hangersystemchange.foodqueuequantitylength": "食用超过多少数量的食物后，才能消除营养价值的降低(0-MAX_INT)",
+  "config.hangersystemchange.foodqueuecategorylength": "食用超过多少种类的食物后，才能消除营养价值的降低(0-MAX_INT)",
+  "config.hangersystemchange.foodnutritiondecreasebyquantity": "因数量限制降低的营养价值乘数(0-1)",
+  "config.hangersystemchange.foodnutritiondecreasebycategory": "因种类限制降低的营养价值乘数(0-1)",
+  "config.hangersystemchange.whitelistcanrefresh": "这些食物不会降低营养价值，且能够刷新其他食物的营养价值(请确认ID正确)",
+  "config.hangersystemchange.blacklist": "这些食物会降低营养价值，且不能刷新其他食物的营养价值(请确认ID正确)",
+  "config.hangersystemchange.ignoredfoods": "这是食物会被忽略。即不会降低营养价值，也不能刷新其他食物的营养价值(请确认ID正确)",
+  "commands.showinfo.success": "成功显示新饥饿度系统信息：",
+  "commands.reloadfoodqueue.success": "成功重新加载食物队列"
+}
