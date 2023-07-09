@@ -1,4 +1,5 @@
 Forgive my bad English, the following content uses automatic translation software.
+
 The benefit of eating the same food continuously will be reduced. It can also nerf bonemeal.
 连续吃同一种食物的收益会降低。同时也可以削弱骨粉。
 
@@ -23,12 +24,16 @@ Nutrition multiplier reduced by types limitation(0-1)
 
 whitelist
 These foods do not reduce the nutrition, and can refresh the nutrition of other foods(Please make sure the Id is correct)
+这些食物不会降低营养价值，且能够刷新其他食物的营养价值(请确认ID正确)
 
 blacklist
 These foods reduce the nutrition and do not refresh the nutrition of other foods(Please make sure the ID is correct)
+这些食物会降低营养价值，且不能刷新其他食物的营养价值(请确认ID正确)
 
 ignoredFoods
 This is food that will be ignored. That is, it does not reduce the nutrition, nor does it refresh the nutrition of other foods(Please make sure the ID is correct)
+这些食物会被忽略。即不会降低营养价值，也不能刷新其他食物的营养价值(请确认ID正确)
 
 nerfBonemeal (default: true)
 if true, bonemeal only allows the crop to grow at one stage. Set false to disabled.
+如果设置为true，骨粉只能让作物生长一个阶段。设置为false 禁用
