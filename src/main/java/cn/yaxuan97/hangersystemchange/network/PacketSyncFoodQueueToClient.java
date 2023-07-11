@@ -36,5 +36,6 @@ public class PacketSyncFoodQueueToClient {
                 player.getCapability(PlayerFoodQueueProvider.PLAYER_FOOD_QUEUE_CAPABILITY).ifPresent(playerFoodQueue -> playerFoodQueue.setFoodQueue(foodQueue));
             }
         }));
+        context.setPacketHandled(true);
     }
 }
