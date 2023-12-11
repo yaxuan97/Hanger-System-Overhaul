@@ -56,6 +56,7 @@ public class FoodQueue {
         foodNutritionDecreaseQuantityMap.put(foodItemKey, n);
         LOGGER.debug("foodNutritionDecrease: " + foodItemKey + " " + n + " -> " + foodNutritionDecreaseQuantityMap.get(foodItemKey));
     }
+
     private void foodNutritionCategoryDecrease(ResourceLocation foodItemKey) {
         int n;
         if (foodNutritionDecreaseCategoryMap.containsKey(foodItemKey)) {
@@ -66,6 +67,7 @@ public class FoodQueue {
         foodNutritionDecreaseCategoryMap.put(foodItemKey, n);
         LOGGER.debug("foodNutritionDecrease: " + foodItemKey + " " + n + " -> " + foodNutritionDecreaseCategoryMap.get(foodItemKey));
     }
+
     private void foodNutritionCategoryIncrease(ResourceLocation foodItemKey) {
         int n;
         if (foodNutritionDecreaseCategoryMap.containsKey(foodItemKey)) {
@@ -76,6 +78,7 @@ public class FoodQueue {
         foodNutritionDecreaseCategoryMap.put(foodItemKey, n);
         LOGGER.debug("foodNutritionIncrease: " + foodItemKey + " " + n + " -> " + foodNutritionDecreaseCategoryMap.get(foodItemKey));
     }
+
     private void foodNutritionQuantityIncrease(ResourceLocation foodItemKey) {
         int n;
         if (foodNutritionDecreaseQuantityMap.containsKey(foodItemKey)) {
@@ -86,19 +89,20 @@ public class FoodQueue {
         foodNutritionDecreaseQuantityMap.put(foodItemKey, n);
         LOGGER.debug("foodNutritionIncrease: " + foodItemKey + " " + n + " -> " + foodNutritionDecreaseQuantityMap.get(foodItemKey));
     }
-    public double getFoodNutrition(ResourceLocation foodItemKey) {
+
+    public float getFoodNutrition(ResourceLocation foodItemKey) {
         if (Config.ignoredFoods.contains(foodItemKey)) {
             return 1.0f;
         }
         if (Config.whitelistCanRefresh.contains(foodItemKey)) {
             return 1.0f;
         }
-        return
-                Math.pow(Config.foodNutritionDecreaseByQuantity, foodNutritionDecreaseQuantityMap.getOrDefault(foodItemKey, 0)) *
-                Math.pow(Config.foodNutritionDecreaseByCategory, foodNutritionDecreaseCategoryMap.getOrDefault(foodItemKey, 0));
+        return (float) (1.0f *
+                        Math.pow(Config.foodNutritionDecreaseByQuantity, foodNutritionDecreaseQuantityMap.getOrDefault(foodItemKey, 1)) *
+                        Math.pow(Config.foodNutritionDecreaseByCategory, foodNutritionDecreaseCategoryMap.getOrDefault(foodItemKey, 1)));
     }
 
-    public double getFoodNutrition(Item foodItem) {
+    public float getFoodNutrition(Item foodItem) {
         return getFoodNutrition(ForgeRegistries.ITEMS.getKey(foodItem));
     }
 
