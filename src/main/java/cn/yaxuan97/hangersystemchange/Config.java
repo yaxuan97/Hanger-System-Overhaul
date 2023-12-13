@@ -17,22 +17,22 @@ public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     private static final ForgeConfigSpec.IntValue FOOD_QUEUE_QUANTITY_LENGTH = BUILDER
-            .translation("foodqueuequantitylength")
+            .translation("config.hangerSystemChange.foodQueueQuantityLength")
             .defineInRange("quantityLength", 20, 0, Integer.MAX_VALUE);
     private static final ForgeConfigSpec.IntValue FOOD_QUEUE_CATEGORY_LENGTH = BUILDER
-            .translation("foodqueuecategorylength")
+            .translation("config.hangerSystemChange.foodQueueCategoryLength")
             .defineInRange("categoryLength", 10, 0, Integer.MAX_VALUE);
     public static final ForgeConfigSpec.DoubleValue FOOD_NUTRITION_DECREASE_BY_QUANTITY = BUILDER
-            .translation("foodnutritiondecreasebyquantity")
+            .translation("config.hangerSystemChange.foodNutritionDecreaseByQuantity")
             .defineInRange("decreaseByQuantity", 0.75, 0, 1);
     public static final ForgeConfigSpec.DoubleValue FOOD_NUTRITION_DECREASE_BY_CATEGORY = BUILDER
-            .translation("foodnutritiondecreasebycategory")
+            .translation("config.hangerSystemChange.foodNutritionDecreaseByCategory")
             .defineInRange("decreaseByCategory", 0.8, 0, 1);
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> WHITELIST_CAN_REFRESH = BUILDER
-            .translation("whitelistcanrefresh")
+            .translation("config.hangerSystemChange.whitelistCanRefresh")
             .defineListAllowEmpty(Collections.singletonList("whitelist"), List::of, Config::validateItemName);
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> BLACKLIST = BUILDER
-            .translation("blacklist")
+            .translation("config.hangerSystemChange.blacklist")
             .defineListAllowEmpty(Collections.singletonList("blacklist"), () -> List.of(
                     "minecraft:cookie",
                     "minecraft:glow_berries",
@@ -59,11 +59,8 @@ public class Config {
                     "minecraft:cod"
             ), Config::validateItemName);
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> IGNORED_FOODS = BUILDER
-            .translation("ignoredfoods")
+            .translation("config.hangerSystemChange.ignoredFoods")
             .defineListAllowEmpty(Collections.singletonList("ignoredFoods"), List::of, Config::validateItemName);
-    public static final ForgeConfigSpec.BooleanValue NERF_BONEMEAL = BUILDER
-            .translation("nerfbonemeal")
-            .define("nerfBonemeal", true);
     static final ForgeConfigSpec SPEC = BUILDER.build();
     public static int foodQueueQuantityLength;
     public static int foodQueueCategoryLength;
@@ -72,7 +69,7 @@ public class Config {
     public static Set<ResourceLocation> whitelistCanRefresh;
     public static Set<ResourceLocation> blacklist;
     public static Set<ResourceLocation> ignoredFoods;
-    public static boolean nerfBonemeal;
+
     private static boolean validateItemName(final Object obj) {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
     }
@@ -93,6 +90,5 @@ public class Config {
         ignoredFoods = IGNORED_FOODS.get().stream()
                 .map(ResourceLocation::new)
                 .collect(Collectors.toSet());
-        nerfBonemeal = NERF_BONEMEAL.get();
     }
 }

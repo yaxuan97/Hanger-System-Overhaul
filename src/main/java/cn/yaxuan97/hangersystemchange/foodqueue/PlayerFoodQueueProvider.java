@@ -13,7 +13,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class PlayerFoodQueueProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
-    public static final Capability<PlayerFoodQueue> PLAYER_FOOD_QUEUE_CAPABILITY = CapabilityManager.get(new CapabilityToken<>(){});
+    public static Capability<PlayerFoodQueue> PLAYER_FOOD_QUEUE_CAPABILITY = CapabilityManager.get(new CapabilityToken<>(){});
     private PlayerFoodQueue playerFoodQueue = null;
     private final LazyOptional<PlayerFoodQueue> lazyOptional = LazyOptional.of(this::createPlayerFoodQueue);
     @Nonnull

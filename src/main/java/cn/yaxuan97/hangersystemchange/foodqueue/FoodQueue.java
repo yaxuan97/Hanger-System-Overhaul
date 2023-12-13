@@ -32,7 +32,7 @@ public class FoodQueue {
         foodQueueCategoryWithBlacklist = new LinkedList<>();
         foodNutritionDecreaseQuantityMap = new HashMap<>();
         foodNutritionDecreaseCategoryMap = new HashMap<>();
-        var compoundTag = buffer.readAnySizeNbt();
+        var compoundTag = buffer.readNbt();
         if (compoundTag != null) {
             this.loadNBTData(compoundTag);
         }
@@ -98,8 +98,8 @@ public class FoodQueue {
             return 1.0f;
         }
         return (float) (1.0f *
-                        Math.pow(Config.foodNutritionDecreaseByQuantity, foodNutritionDecreaseQuantityMap.getOrDefault(foodItemKey, 1)) *
-                        Math.pow(Config.foodNutritionDecreaseByCategory, foodNutritionDecreaseCategoryMap.getOrDefault(foodItemKey, 1)));
+                        Math.pow(Config.foodNutritionDecreaseByQuantity, foodNutritionDecreaseQuantityMap.getOrDefault(foodItemKey, 0)) *
+                        Math.pow(Config.foodNutritionDecreaseByCategory, foodNutritionDecreaseCategoryMap.getOrDefault(foodItemKey, 0)));
     }
 
     public float getFoodNutrition(Item foodItem) {

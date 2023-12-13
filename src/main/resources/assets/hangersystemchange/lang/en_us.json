@@ -1,11 +1,11 @@
 {
-  "config.hangersystemchange.foodqueuequantitylength": "After consuming more than a certain amount of food to eliminate the reduction of nutrition(0-MAX_INT)",
-  "config.hangersystemchange.foodqueuecategorylength": "More than how many types of food are consumed before the reduction in nutrition is eliminated(0-MAX_INT)",
-  "config.hangersystemchange.foodnutritiondecreasebyquantity": "Nutrition multiplier reduced by quantity limitation(0-1)",
-  "config.hangersystemchange.foodnutritiondecreasebycategory": "Nutrition multiplier reduced by types limitation(0-1)",
-  "config.hangersystemchange.whitelistcanrefresh": "These foods do not reduce the nutrition, and can refresh the nutrition of other foods(Please make sure the Id is correct)",
-  "config.hangersystemchange.blacklist": "These foods reduce the nutrition and do not refresh the nutrition of other foods(Please make sure the ID is correct)",
-  "config.hangersystemchange.ignoredfoods": "This is food that will be ignored. That is, it does not reduce the nutrition, nor does it refresh the nutrition of other foods(Please make sure the ID is correct)",
+  "config.hangerSystemChange.foodQueueQuantityLength": "After consuming more than a certain amount of food to eliminate the reduction of nutrition(0-MAX_INT)",
+  "config.hangerSystemChange.foodQueueCategoryLength": "More than how many types of food are consumed before the reduction in nutrition is eliminated(0-MAX_INT)",
+  "config.hangerSystemChange.foodNutritionDecreaseByQuantity": "Nutritional value multiplier reduced by quantity limitation(0-1)",
+  "config.hangerSystemChange.foodNutritionDecreaseByCategory": "Nutritional value multiplier reduced by types limitation(0-1)",
+  "config.hangerSystemChange.whitelistCanRefresh": "These foods do not reduce the nutrition, and can refresh the nutrition of other foods(Please make sure the ID is correct)",
+  "config.hangerSystemChange.blacklist": "These foods reduce the nutrition and do not refresh the nutrition of other foods(Please make sure the ID is correct)",
+  "config.hangerSystemChange.ignoredFoods": "This is food that will be ignored. That is, it does not reduce the nutrition, nor does it refresh the nutrition of other foods(Please make sure the ID is correct)",
   "commands.showinfo.success": "Successfully displayed the information of the new hunger system:",
   "commands.reloadfoodqueue.success": "Successfully reloaded the food queue"
 }

@@ -16,7 +16,7 @@ public class PlayerFoodQueue {
     public void addFood(Item foodItem) {
         foodQueue.addFood(foodItem);
     }
-    public double getFoodNutrition(Item foodItem) {
+    public float getFoodNutrition(Item foodItem) {
         return foodQueue.getFoodNutrition(foodItem);
     }
 

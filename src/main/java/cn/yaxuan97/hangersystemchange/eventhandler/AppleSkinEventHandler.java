@@ -5,6 +5,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import squeek.appleskin.api.event.FoodValuesEvent;
 import squeek.appleskin.api.food.FoodValues;
 
+import static cn.yaxuan97.hangersystemchange.HangerSystemChangeMod.LOGGER;
+
 
 public class AppleSkinEventHandler {
     @SubscribeEvent
@@ -14,7 +16,7 @@ public class AppleSkinEventHandler {
                     var foodItem = event.itemStack.getItem();
                     var foodNutritionChange = playerFoodQueue.getFoodNutrition(foodItem);
                     event.modifiedFoodValues = new FoodValues(
-                            (int) Math.floor(event.modifiedFoodValues.hunger * foodNutritionChange),
+                            Math.round(event.modifiedFoodValues.hunger * foodNutritionChange),
                             event.modifiedFoodValues.saturationModifier
                     );
                 });
